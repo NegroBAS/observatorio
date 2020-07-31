@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import Swal from 'sweetalert';
+import { ToastProvider, useToasts } from 'react-toast-notifications'
 
 function Violencemeter() {
+    const { addToast } = useToasts();
     const [edit, setEdit] = useState(false);
     const [id, setId] = useState(null);
     const [violencemeters, serViolencemeters] = useState(null);
@@ -29,6 +31,7 @@ function Violencemeter() {
             console.log(id);
             let res = await fetch('/violencemeters/' + id);
             let data = await res.json();
+            $('.modal').find('.modal-title').text('Editar item');
             $('.modal').find('#name').val(data.name);
             $('.modal').find('#risk_level').val(data.risk_level);
             $('.modal').find('#attention_route').val(data.attention_route);
@@ -49,27 +52,27 @@ function Violencemeter() {
                 buttons: true,
                 dangerMode: true,
             }).then((willDelete) => {
-                    if (willDelete) {
-                        let fd = new FormData();
-                        fd.append('_method', 'DELETE');
-                        fd.append('_token', document.getElementById('token').content);
-                        let res = fetch('/violencemeters/'+id, {
-                            method:'POST',
-                            body:fd
-                        }).then(data => {
-                            data.json().then(resp => {
-                                if(resp.status===200){
-                                    getData();
-                                    swal(`${resp.message}!`, {
-                                        icon: "success",
-                                    });
-                                }else{
-                                    console.log(resp);
-                                }
-                            });
-                        })
-                    }
-                });
+                if (willDelete) {
+                    let fd = new FormData();
+                    fd.append('_method', 'DELETE');
+                    fd.append('_token', document.getElementById('token').content);
+                    let res = fetch('/violencemeters/' + id, {
+                        method: 'POST',
+                        body: fd
+                    }).then(data => {
+                        data.json().then(resp => {
+                            if (resp.status === 200) {
+                                getData();
+                                swal(`${resp.message}!`, {
+                                    icon: "success",
+                                });
+                            } else {
+                                console.log(resp);
+                            }
+                        });
+                    })
+                }
+            });
         } catch (error) {
             console.log(error);
         }
@@ -91,6 +94,7 @@ function Violencemeter() {
             let data = await res.json();
             if (data.status === 200) {
                 $('.modal').modal('toggle');
+                addToast(data.message, {appearance:'success'});
             }
         } else {
             let res = await fetch('/violencemeters', {
@@ -100,6 +104,7 @@ function Violencemeter() {
             let data = await res.json();
             if (data.status === 201) {
                 $('.modal').modal('toggle');
+                addToast(data.message, {appearance:'success'});
             }
         }
         getData();
@@ -118,33 +123,33 @@ function Violencemeter() {
     }
     if (violencemeters.length > 0) {
         return (
-            <div className="row mt-3">
-                <div className="col">
-                    <table className="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Nivel de riesgo</th>
-                                <th>Ruta de atencion</th>
-                                <th>Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {violencemeters.map(violencemeter => (
-                                <tr key={violencemeter.id}>
-                                    <td>{violencemeter.name}</td>
-                                    <td>{violencemeter.risk_level}</td>
-                                    <td>{violencemeter.attention_route}</td>
-                                    <td>
-                                        <button className="btn btn-primary" data-id={violencemeter.id} onClick={getViolencemeter}>Editar</button>
-                                        <button className="btn btn-danger ml-1" data-id={violencemeter.id} onClick={deleteViolencemeter}>Eliminar</button>
-                                    </td>
+                <div className="row mt-3">
+                    <div className="col">
+                        <table className="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Nivel de riesgo</th>
+                                    <th>Ruta de atencion</th>
+                                    <th>Opciones</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {violencemeters.map(violencemeter => (
+                                    <tr key={violencemeter.id}>
+                                        <td>{violencemeter.name}</td>
+                                        <td>{violencemeter.risk_level}</td>
+                                        <td>{violencemeter.attention_route}</td>
+                                        <td>
+                                            <button className="btn btn-primary" data-id={violencemeter.id} onClick={getViolencemeter}>Editar</button>
+                                            <button className="btn btn-danger ml-1" data-id={violencemeter.id} onClick={deleteViolencemeter}>Eliminar</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
         );
     }
     return (
@@ -159,5 +164,5 @@ function Violencemeter() {
 export default Violencemeter;
 
 if (document.getElementById('violencemeters')) {
-    ReactDOM.render(<Violencemeter />, document.getElementById('violencemeters'));
+    ReactDOM.render(<ToastProvider><Violencemeter /></ToastProvider>, document.getElementById('violencemeters'));
 }
