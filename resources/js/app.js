@@ -13,3 +13,4 @@ require('./bootstrap');
  */
 
 require('./components/Violencemeters');
+require('./components/Messages');

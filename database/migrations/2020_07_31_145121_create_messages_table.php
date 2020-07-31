@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateViolencemetersTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateViolencemetersTable extends Migration
      */
     public function up()
     {
-        Schema::create('violencemeters', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('risk_level', ['alert', 'reaction', 'urgent']);
-            $table->integer('level');
-            $table->enum('action_to_take', ['No es amor es violencia', 'Hay que actuar', 'Busca ayuda']);
-            $table->string('attention_route');
+            $table->string('phone');
+            $table->string('email');
+            $table->longText('message');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateViolencemetersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('violencemeters');
+        Schema::dropIfExists('messages');
     }
 }

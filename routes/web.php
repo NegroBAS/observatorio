@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/violentometro', 'PaginaController@violentometro')->name('violentometro');
+Route::resource('messages', 'MessageController');
 
 Auth::routes();
 

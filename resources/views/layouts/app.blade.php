@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <!-- CSRF Token -->
     <meta name="csrf-token" id="token" content="{{ csrf_token() }}">
@@ -32,9 +33,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    @auth    
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a href="{{route('messages.index')}}" class="nav-link">Mensajes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('violencemeters.index')}}" class="nav-link">Violentometro</a>
+                            </li>
+                        </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

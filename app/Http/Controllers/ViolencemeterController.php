@@ -41,10 +41,14 @@ class ViolencemeterController extends Controller
     {
         $name = $request->get('name');
         $risk_level = $request->get('risk_level');
+        $level = $request->get('level');
+        $action_to_take = $request->get('action_to_take');
         $attention_route = $request->get('attention_route');
         Violencemeter::create([
             'name'=>$request->get('name'),
             'risk_level'=>$request->get('risk_level'),
+            'level' => $request->get('level'),
+            'action_to_take' => $request->get('action_to_take'),
             'attention_route'=>$request->get('attention_route')
         ]);
         return response()->json([
@@ -86,6 +90,8 @@ class ViolencemeterController extends Controller
     {
         $violencemeter->name = $request->get('name');
         $violencemeter->risk_level = $request->get('risk_level');
+        $violencemeter->level = $request->get('level');
+        $violencemeter->action_to_take = $request('action_to_take');
         $violencemeter->attention_route = $request->get('attention_route');
         $violencemeter->save();
         return response()->json([

@@ -33,13 +33,35 @@
                       <input type="text" name="name" id="name" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label for="risk_level">Nivel de riesgo</label>
+                    <div class="form-row">
+                      <div class="col">
+                      <label for="risk_level">Nivel de riesgo</label>
                     <select name="risk_level" id="risk_level" class="form-control">
                         <option value="alert">Alerta</option>
                         <option value="reaction">Reacciona</option>
                         <option value="urgent">Urgente</option>
                     </select>
-                </div>
+                      </div>
+                      <div class="col">
+                      <label for="level">Nivel de gravedad</label>
+                    <select name="level" id="level" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="action_to_take">Acción a tomar</label>
+                    <select name="action_to_take" id="action_to_take" class="form-control">
+                        <option value="No es amor es violencia">No es amor es violencia</option>
+                        <option value="Hay que actuar">Hay que actuar</option>
+                        <option value="Busca ayuda">Busca ayuda</option>
+                    </select>
+                  </div>
                 <div class="form-group">
                     <label for="attention_route">Ruta de atencion</label>
                     <textarea name="attention_route" id="attention_route" class="form-control"></textarea>

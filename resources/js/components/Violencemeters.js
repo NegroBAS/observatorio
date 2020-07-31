@@ -34,6 +34,8 @@ function Violencemeter() {
             $('.modal').find('.modal-title').text('Editar item');
             $('.modal').find('#name').val(data.name);
             $('.modal').find('#risk_level').val(data.risk_level);
+            $('.modal').find('#level').val(data.level);
+            $('.modal').find('#action_to_take').val(data.action_to_take);
             $('.modal').find('#attention_route').val(data.attention_route);
             $('.modal').modal('toggle');
             setId(id);
@@ -46,8 +48,8 @@ function Violencemeter() {
             let id = $(e.target).data('id');
             setId(id);
             swal({
-                title: "Estas seguro?",
-                text: "No podras revertir esto!",
+                title: "¿Estás seguro?",
+                text: "¡No podras revertir esto!",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -94,7 +96,7 @@ function Violencemeter() {
             let data = await res.json();
             if (data.status === 200) {
                 $('.modal').modal('toggle');
-                addToast(data.message, {appearance:'success'});
+                addToast(data.message, { appearance: 'success' });
             }
         } else {
             let res = await fetch('/violencemeters', {
@@ -104,7 +106,7 @@ function Violencemeter() {
             let data = await res.json();
             if (data.status === 201) {
                 $('.modal').modal('toggle');
-                addToast(data.message, {appearance:'success'});
+                addToast(data.message, { appearance: 'success' });
             }
         }
         getData();
@@ -123,33 +125,39 @@ function Violencemeter() {
     }
     if (violencemeters.length > 0) {
         return (
-                <div className="row mt-3">
-                    <div className="col">
-                        <table className="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Nivel de riesgo</th>
-                                    <th>Ruta de atencion</th>
-                                    <th>Opciones</th>
+            <div className="row mt-3">
+                <div className="col">
+                    <table className="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Nivel de riesgo</th>
+                                <th>Nivel</th>
+                                <th>Acción a tomar</th>
+                                <th>Ruta de atencion</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {violencemeters.map(violencemeter => (
+                                <tr key={violencemeter.id}>
+                                    <td>{violencemeter.name}</td>
+                                    <td>{violencemeter.risk_level}</td>
+                                    <td>{violencemeter.level}</td>
+                                    <td>{violencemeter.action_to_take}</td>
+                                    <td>{violencemeter.attention_route}</td>
+                                    <td>
+                                        <div className="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" data-id={violencemeter.id} onClick={getViolencemeter} className="btn btn-outline-primary">Editar</button>
+                                            <button type="button" data-id={violencemeter.id} onClick={deleteViolencemeter} className="btn btn-outline-danger">Eliminar</button>
+                                        </div>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {violencemeters.map(violencemeter => (
-                                    <tr key={violencemeter.id}>
-                                        <td>{violencemeter.name}</td>
-                                        <td>{violencemeter.risk_level}</td>
-                                        <td>{violencemeter.attention_route}</td>
-                                        <td>
-                                            <button className="btn btn-primary" data-id={violencemeter.id} onClick={getViolencemeter}>Editar</button>
-                                            <button className="btn btn-danger ml-1" data-id={violencemeter.id} onClick={deleteViolencemeter}>Eliminar</button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
+            </div>
         );
     }
     return (
@@ -160,7 +168,6 @@ function Violencemeter() {
         </div>
     );
 }
-
 export default Violencemeter;
 
 if (document.getElementById('violencemeters')) {
