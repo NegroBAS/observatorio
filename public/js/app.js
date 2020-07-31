@@ -66966,23 +66966,25 @@ function Violencemeter() {
               data = _context2.sent;
               $('.modal').find('#name').val(data.name);
               $('.modal').find('#risk_level').val(data.risk_level);
+              $('.modal').find('#level').val(data.level);
+              $('.modal').find('#action_to_take').val(data.action_to_take);
               $('.modal').find('#attention_route').val(data.attention_route);
               $('.modal').modal('toggle');
               setId(_id);
-              _context2.next = 20;
+              _context2.next = 22;
               break;
 
-            case 17:
-              _context2.prev = 17;
+            case 19:
+              _context2.prev = 19;
               _context2.t0 = _context2["catch"](0);
               console.log(_context2.t0);
 
-            case 20:
+            case 22:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[0, 17]]);
+      }, _callee2, null, [[0, 19]]);
     }));
 
     return function getViolencemeter(_x) {
@@ -67002,8 +67004,8 @@ function Violencemeter() {
                 _id2 = $(e.target).data('id');
                 setId(_id2);
                 swal({
-                  title: "Estas seguro?",
-                  text: "No podras revertir esto!",
+                  title: "¿Estás seguro?",
+                  text: "¡No podras revertir esto!",
                   icon: "warning",
                   buttons: true,
                   dangerMode: true
@@ -67145,10 +67147,10 @@ function Violencemeter() {
       className: "col"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
       className: "table table-bordered"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Nivel de riesgo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Ruta de atencion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Opciones"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, violencemeters.map(function (violencemeter) {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Nivel de riesgo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Nivel"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Acci\xF3n a tomar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Ruta de atencion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Opciones"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, violencemeters.map(function (violencemeter) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
         key: violencemeter.id
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.risk_level), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.attention_route), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.risk_level), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.level), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.action_to_take), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, violencemeter.attention_route), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         className: "btn btn-primary",
         "data-id": violencemeter.id,
         onClick: getViolencemeter
@@ -67195,8 +67197,8 @@ if (document.getElementById('violencemeters')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/santiagobedoya/Documents/laravel/observatorio/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/santiagobedoya/Documents/laravel/observatorio/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Sebastian\Desktop\observatorio-master\observatorio-master\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Sebastian\Desktop\observatorio-master\observatorio-master\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

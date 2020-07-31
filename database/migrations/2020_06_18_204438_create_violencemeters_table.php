@@ -17,6 +17,8 @@ class CreateViolencemetersTable extends Migration
             $table->id();
             $table->string('name');
             $table->enum('risk_level', ['alert', 'reaction', 'urgent']);
+            $table->integer('level');
+            $table->enum('action_to_take', ['No es amor es violencia', 'Hay que actuar', 'Busca ayuda']);
             $table->string('attention_route');
             $table->timestamps();
         });

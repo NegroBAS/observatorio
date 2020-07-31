@@ -1,0 +1,177 @@
+/* *{
+    border: 1px solid crimson;
+} */
+div.nivel-violentometro {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -40px;
+    width: 50px;
+    height: 600px;
+    border-radius: 25px;
+    transition: 1s;
+}
+.nivel-violentometro{
+  position: relative;
+  top: -100px;
+  left: 30px;
+}
+.yellow {
+    background-color: #ffd531;
+  }
+  
+  .orange {
+    background-color: #fc7a56;
+  }
+  
+  .red {
+    background-color: #f1608e;
+  }
+.level {
+    background-color: darkgray;
+    /* border: 1px solid crimson; */
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    transition: 0.5s;
+}
+.toast-message {
+    width: 400px !important;
+    position: relative;
+    /* border: 1px solid crimson; */
+    top: -900px;
+    left: 450px;
+}
+.header-toast {
+    background-color: #7d2181;
+    color: white;
+}
+.toast-body {
+    font-size: bolder;
+    color: black !important;
+}
+.alert {
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+@media (max-width: 505px) {
+
+    div.row div.alert {
+      font-size: 15px;
+      width: 200px !important;
+      color: #ebebeb;
+      font-weight: bolder;
+    }
+    .alert-name{
+      margin-right: -15px!important;
+      margin-left: 30px!important;
+      margin-top: 20px;
+      position: fixed;
+      z-index: 2;
+    }
+    div.titles{
+      display: none;
+    }
+    div.items-violencemeter{
+      margin-top: 100px!important;
+    }
+  
+    .toast-message {
+        position: fixed !important;
+        width: 300px!important;
+        left:10%;
+        top: 5% !important;
+        z-index: 999;
+    }
+    .switch-container {
+      width: 150px;
+    }
+    .vacio {
+      display: none;
+    }
+  
+    .alert {
+        border-radius: 25px;
+        color: white;
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: center;;
+    }
+  
+    .nivel-violentometro {
+        position: fixed;
+        bottom: 100%;
+        top:-20px;
+        height: 50px !important;
+        width: 300px !important;
+        transition: 0.01s ease-in;
+        z-index: 66;
+    }
+  
+    .checks {
+      margin-top: 75px;
+    }
+    div.options {
+        display: block !important;
+      position: fixed;
+      left: 0%;
+      bottom: 40%;
+      width: 50px;
+      /* right: 0%!important; */
+      z-index: 66;
+    }
+    
+      .btn-help {
+        position: relative;
+        margin-left: 25% !important;
+        margin-right: 25% !important;
+        margin-top: -20px;
+      }
+    
+    .level {
+      background-color: darkgray;
+      border-radius: 25px;
+      transition: 0.2s;
+      position: relative;
+      height: 100%;
+    }
+    div.options .btn {
+      border: none;
+      width: 50px;
+      height: 50px;
+      font: 0/0 a !important;
+      text-shadow: transparent !important;
+      color: transparent !important;
+      text-decoration: none !important;
+      /* border: 1px solid crimson; */
+    }
+    .btn-chat {
+      background: url(../icons/whatsapp.png) no-repeat center;
+      background-size: contain;
+      position: relative;
+      left: 0px;
+    }
+    .btn-llamar {
+      background: url(../icons/telefono.png) no-repeat center;
+      background-size: contain;
+      margin-top: 20px;
+    }
+    .btn-ruta {
+      background: url(../icons/pdf.png) no-repeat center;
+      background-size: contain;
+      margin-top: 20px;
+    }
+    .btn-help {
+      background: url(../icons/info.png) no-repeat center;
+      background-size: contain;
+      position: relative;   
+      left: -12px;
+      margin-bottom: -20px;
+    }
+    div.border{
+        border: 1px solid crimson;
+      }
+  }

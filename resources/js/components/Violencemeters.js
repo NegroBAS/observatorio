@@ -31,6 +31,8 @@ function Violencemeter() {
             let data = await res.json();
             $('.modal').find('#name').val(data.name);
             $('.modal').find('#risk_level').val(data.risk_level);
+            $('.modal').find('#level').val(data.level);
+            $('.modal').find('#action_to_take').val(data.action_to_take);
             $('.modal').find('#attention_route').val(data.attention_route);
             $('.modal').modal('toggle');
             setId(id);
@@ -43,8 +45,8 @@ function Violencemeter() {
             let id = $(e.target).data('id');
             setId(id);
             swal({
-                title: "Estas seguro?",
-                text: "No podras revertir esto!",
+                title: "¿Estás seguro?",
+                text: "¡No podras revertir esto!",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -125,6 +127,8 @@ function Violencemeter() {
                             <tr>
                                 <th>Nombre</th>
                                 <th>Nivel de riesgo</th>
+                                <th>Nivel</th>
+                                <th>Acción a tomar</th>
                                 <th>Ruta de atencion</th>
                                 <th>Opciones</th>
                             </tr>
@@ -134,6 +138,8 @@ function Violencemeter() {
                                 <tr key={violencemeter.id}>
                                     <td>{violencemeter.name}</td>
                                     <td>{violencemeter.risk_level}</td>
+                                    <td>{violencemeter.level}</td>
+                                    <td>{violencemeter.action_to_take}</td>
                                     <td>{violencemeter.attention_route}</td>
                                     <td>
                                         <button className="btn btn-primary" data-id={violencemeter.id} onClick={getViolencemeter}>Editar</button>
@@ -155,7 +161,6 @@ function Violencemeter() {
         </div>
     );
 }
-
 export default Violencemeter;
 
 if (document.getElementById('violencemeters')) {
