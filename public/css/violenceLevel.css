@@ -36,7 +36,7 @@ div.nivel-violentometro {
   /* border-top-left-radius : 25px;
   border-top-right-radius   : 25px; */
   position                  : relative;
-  left: 165px;
+  left                      : 165px;
   transition                : 0.5s;
   width                     : 20px;
 }
@@ -325,142 +325,411 @@ div.nivel-violentometro {
   top      : -410px;
   left     : 460px;
 }
+@media (min-width: 320px) {
 
-
-@media (max-width: 505px) {
-
-  .buttons {
-    position: relative;
-    left    : 100px;
-    top     : -80px;
+  .espiral {
+    width      : 145vh;
+    margin-left: -15px;
   }
 
-  div.row div.alert {
-    font-size  : 15px;
-    width      : 200px !important;
-    color      : #ebebeb;
-    font-weight: bolder;
+  .item1 {
+    top : 750px;
+    left: 10px;
   }
 
-  .alert-name {
-    margin-right: -15px !important;
-    margin-left : 30px !important;
-    margin-top  : 20px;
-    position    : fixed;
-    z-index     : 2;
+  .item2 {
+    left: 10px;
+    top : 570px;
   }
 
-  div.titles {
-    display: none;
+  .item3 {
+    top : 380px;
+    left: 70px;
   }
 
-  div.items-violencemeter {
-    margin-top: 100px !important;
+  .item4 {
+    top : 220px;
+    left: 240px;
   }
 
-  .toast-message {
-    position: fixed !important;
-    width   : 300px !important;
-    left    : 10%;
-    top     : 5% !important;
-    z-index : 999;
+  .item5 {
+    top : 120px;
+    left: 360px;
   }
 
-  .switch-container {
-    width: 150px;
+  .item6 {
+    top : 70px;
+    left: 500px;
   }
 
-  .vacio {
-    display: none;
+  .item7 {
+    top : 100px;
+    left: 650px;
   }
 
-  .alert {
-    border-radius: 25px;
-    color        : white;
-    font-size    : 20px;
-    font-weight  : bolder;
-    text-align   : center;
-    ;
+  .item8 {
+    top : 180px;
+    left: 710px;
   }
 
-  .nivel-violentometro {
-    position  : fixed;
-    bottom    : 100%;
-    top       : -20px;
-    height    : 50px !important;
-    width     : 300px !important;
-    transition: 0.01s ease-in;
-    z-index   : 66;
+  .item9 {
+    top : 220px;
+    left: 700px;
   }
 
-  .checks {
-    margin-top: 75px;
+  .item10 {
+    top : 280px;
+    left: 670px;
   }
 
-  div.options {
-    display : block !important;
-    position: fixed;
-    left    : 0%;
-    bottom  : 40%;
-    width   : 50px;
-    /* right: 0%!important; */
-    z-index : 66;
+  .item11 {
+    top : 285px;
+    left: 555px;
   }
 
-  /* .btn-help {
-    position    : relative;
-    margin-left : 25% !important;
-    margin-right: 25% !important;
-    margin-top  : -20px;
-  } */
-
-  /* .level {
-    background-color: darkgray;
-    border-radius   : 25px;
-    transition      : 0.2s;
-    position        : relative;
-    width: 10px;
-  } */
-
-  div.options .btn {
-    border         : none;
-    width          : 50px;
-    height         : 50px;
-    font           : 0/0 a !important;
-    text-shadow    : transparent !important;
-    color          : transparent !important;
-    text-decoration: none !important;
-    /* border      : 1px solid crimson; */
+  .item12 {
+    top : 245px;
+    left: 445px;
   }
 
-  /* .btn-chat {
-    background     : url(../icons/whatsapp.png) no-repeat center;
-    background-size: contain;
-    position       : relative;
-    left           : 0px;
+  .item13 {
+    top : 135px;
+    left: 340px;
   }
 
-  .btn-llamar {
-    background     : url(../icons/telefono.png) no-repeat center;
-    background-size: contain;
-    margin-top     : 20px;
+  .item14 {
+    top : 35px;
+    left: 310px;
   }
 
-  .btn-ruta {
-    background     : url(../icons/pdf.png) no-repeat center;
-    background-size: contain;
-    margin-top     : 20px;
+  .item15 {
+    top : -85px;
+    left: 292px;
   }
 
-  .btn-help {
-    background     : url(../icons/info.png) no-repeat center;
-    background-size: contain;
-    position       : relative;
-    left           : -12px;
-    margin-bottom  : -20px;
-  } */
+  .item16 {
+    top : -190px;
+    left: 330px;
+  }
 
-  div.border {
-    border: 1px solid crimson;
+  .item17 {
+    top : -260px;
+    left: 410px;
+  }
+
+  .item18 {
+    top : -305px;
+    left: 480px;
+  }
+
+  .item19 {
+    top : -320px;
+    left: 545px;
+  }
+
+  .item20 {
+    top : -305px;
+    left: 567px;
+  }
+
+  .item21 {
+    top : -280px;
+    left: 567px;
+  }
+
+  .item22 {
+    top : -250px;
+    left: 510px;
+  }
+
+  .item23 {
+    top : -300px;
+    left: 458px;
+  }
+
+  .item24 {
+    top : -410px;
+    left: 460px;
+  }
+
+}
+@media (min-width: 360px) {
+
+  .espiral {
+    width      : 130vh;
+    margin-left: -15px;
+  }
+
+  .items {
+    color: red;
+  }
+
+  .item1 {
+    top : 750px;
+    left: 10px;
+  }
+
+  .item2 {
+    left: 10px;
+    top : 570px;
+  }
+
+  .item3 {
+    top : 380px;
+    left: 70px;
+  }
+
+  .item4 {
+    top : 220px;
+    left: 240px;
+  }
+
+  .item5 {
+    top : 120px;
+    left: 360px;
+  }
+
+  .item6 {
+    top : 70px;
+    left: 500px;
+  }
+
+  .item7 {
+    top : 100px;
+    left: 650px;
+  }
+
+  .item8 {
+    top : 180px;
+    left: 710px;
+  }
+
+  .item9 {
+    top : 220px;
+    left: 700px;
+  }
+
+  .item10 {
+    top : 280px;
+    left: 670px;
+  }
+
+  .item11 {
+    top : 285px;
+    left: 555px;
+  }
+
+  .item12 {
+    top : 245px;
+    left: 445px;
+  }
+
+  .item13 {
+    top : 135px;
+    left: 340px;
+  }
+
+  .item14 {
+    top : 35px;
+    left: 310px;
+  }
+
+  .item15 {
+    top : -85px;
+    left: 292px;
+  }
+
+  .item16 {
+    top : -190px;
+    left: 330px;
+  }
+
+  .item17 {
+    top : -260px;
+    left: 410px;
+  }
+
+  .item18 {
+    top : -305px;
+    left: 480px;
+  }
+
+  .item19 {
+    top : -320px;
+    left: 545px;
+  }
+
+  .item20 {
+    top : -305px;
+    left: 567px;
+  }
+
+  .item21 {
+    top : -280px;
+    left: 567px;
+  }
+
+  .item22 {
+    top : -250px;
+    left: 510px;
+  }
+
+  .item23 {
+    top : -300px;
+    left: 458px;
+  }
+
+  .item24 {
+    top : -410px;
+    left: 460px;
+  }
+
+}
+@media (min-width: 375px) {
+
+  .espiral {
+    width      : 105vh;
+    margin-left: -15px;
+  }
+
+  .items {
+    color: #F4F4F4;
+  }
+
+  .item1 {
+    top : 750px;
+    left: 10px;
+  }
+
+  .item2 {
+    left: 10px;
+    top : 570px;
+  }
+
+  .item3 {
+    top : 380px;
+    left: 70px;
+  }
+
+  .item4 {
+    top : 220px;
+    left: 240px;
+  }
+
+  .item5 {
+    top : 120px;
+    left: 370px;
+  }
+
+  .item6 {
+    top : 70px;
+    left: 500px;
+  }
+
+  .item7 {
+    top : 100px;
+    left: 660px;
+  }
+
+  .item8 {
+    top : 180px;
+    left: 720px;
+  }
+
+  .item9 {
+    top : 220px;
+    left: 700px;
+  }
+
+  .item10 {
+    top : 280px;
+    left: 680px;
+  }
+
+  .item11 {
+    top : 290px;
+    left: 565px;
+  }
+
+  .item12 {
+    top : 245px;
+    left: 445px;
+  }
+
+  .item13 {
+    top : 140px;
+    left: 345px;
+  }
+
+  .item14 {
+    top : 40px;
+    left: 310px;
+  }
+
+  .item15 {
+    top : -85px;
+    left: 300px;
+  }
+
+  .item16 {
+    top : -190px;
+    left: 330px;
+  }
+
+  .item17 {
+    top : -260px;
+    left: 410px;
+  }
+
+  .item18 {
+    top : -305px;
+    left: 480px;
+  }
+
+  .item19 {
+    top : -320px;
+    left: 545px;
+  }
+
+  .item20 {
+    top : -305px;
+    left: 575px;
+  }
+
+  .item21 {
+    top : -280px;
+    left: 575px;
+  }
+
+  .item22 {
+    top : -250px;
+    left: 525px;
+  }
+
+  .item23 {
+    top : -300px;
+    left: 465px;
+  }
+
+  .item24 {
+    top : -410px;
+    left: 472px;
+  }
+
+}
+@media(min-width: 411px){
+  .espiral{
+    width: 115vh;
   }
 }
+@media(max-width: 411px){
+  .espiral{
+    width: 105vh;
+  }
+}
+@media(max-width: 375px){
+  .espiral{
+    width: 105vh;
+  }
+}
+

@@ -66,53 +66,23 @@ function onChange(e) {
     console.log(index);
     console.log(parseFloat(sum).toFixed(1));
 
-    if (
-        navigator.userAgent.match(/Android/i) ||
-        navigator.userAgent.match(/webOS/i) ||
-        navigator.userAgent.match(/iPhone/i) ||
-        navigator.userAgent.match(/iPad/i) ||
-        navigator.userAgent.match(/iPod/i) ||
-        navigator.userAgent.match(/BlackBerry/i) ||
-        navigator.userAgent.match(/Windows Phone/i)
-    ) {
-        // console.log("movil");
-        storage.setItem(
-            "level",
-            (document.getElementById("level").style.width = 100 - sum + "%")
-        );
-        document.getElementById("level").style.width = storage.getItem("level");
-        document.getElementById("level").style.height = "100%";
-    } else {
-        // console.log("mas grande")
+    // console.log("mas grande")
 
-        storage.setItem(
-            "level",
-            (document.getElementById("level").style.height = 100 - sum + "%")
-        );
-        document.getElementById("level").style.height = storage.getItem(
-            "level"
-        );
-        storage.setItem("level", (level.style.height = 100 - sum + "%"));
-    }
-
+    storage.setItem(
+        "level",
+        (document.getElementById("level").style.height = 100 - sum + "%")
+    );
+    document.getElementById("level").style.height = storage.getItem(
+        "level"
+    );
+    storage.setItem("level", (level.style.height = 100 - sum + "%"));
     // console.log(parseFloat(sum).toFixed(1));
-
     if (sum > 99) {
         level.style.display = "none";
     } else {
         level.style.display = "block";
     }
     // level.style.height = storage.getItem("level");
-
-    if (sum < 33.3) {
-        violentometro.style.backgroundColor = "#ffd531";
-    } else if (sum > 33.3 && sum < 66.6) {
-        violentometro.style.backgroundColor = "#fc7a56";
-    } else if (sum > 66.6) {
-        violentometro.style.backgroundColor = "#f1608e";
-    } else if (sum == 1.2) {
-        violentometro.style.backgroundColor = "darkgray";
-    }
 }
 
 $(document).ready(function () {
@@ -120,19 +90,9 @@ $(document).ready(function () {
         // console.log(localStorage.key(i));
         checks.push(document.getElementById(localStorage.key(i)));
     }
-    if (
-        navigator.userAgent.match(/Android/i) ||
-        navigator.userAgent.match(/webOS/i) ||
-        navigator.userAgent.match(/iPhone/i) ||
-        navigator.userAgent.match(/iPad/i) ||
-        navigator.userAgent.match(/iPod/i) ||
-        navigator.userAgent.match(/BlackBerry/i) ||
-        navigator.userAgent.match(/Windows Phone/i)
-    ) {
-        level.style.width = storage.getItem("level");
-    } else {
-        level.style.height = storage.getItem("level");
-    }
+
+    level.style.height = storage.getItem("level");
+
 
     if (sum > 99) {
         level.style.display = "none";
@@ -140,16 +100,6 @@ $(document).ready(function () {
         level.style.display = "block";
     }
     // level.style.height = storage.getItem("level");
-
-    if (sum < 33.3) {
-        violentometro.style.backgroundColor = "#ffd531";
-    } else if (sum > 33.3 && sum < 66.6) {
-        violentometro.style.backgroundColor = "#fc7a56";
-    } else if (sum > 66.6) {
-        violentometro.style.backgroundColor = "#f1608e";
-    } else if (sum == 1.2) {
-        violentometro.style.backgroundColor = "darkgray";
-    }
     checks.forEach(check => {
         if (storage.getItem(check.id) != null) {
             if (storage.getItem(check.id) === "true") {

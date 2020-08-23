@@ -55,7 +55,7 @@
         </div>
 
         <div class="row">
-            <div class="col-9">
+            <div class="col-sm-12 col-md-9 col-lg-9 ">
                 <div class="espiral">
                     @foreach ($violencemeters as $violencemeter)
 
