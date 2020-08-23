@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <title>Laravel</title>
 
@@ -21,20 +21,11 @@
     <style>
         html,
         body {
-            background-color: #fff;
+            background-color: #D9D9D9;
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
-           
-        }
-        .fondo{
 
-            height: 100vh;
-            margin: 0;
-            margin-top: 0;
-            background: url(https://image.freepik.com/vector-gratis/ilustracion-concepto-violencia-genero_114360-1972.jpg) no-repeat center;
-            /* background: url(https://image.freepik.com/vector-gratis/concepto-igualdad-genero_23-2148576608.jpg) no-repeat center; */
-            background-size: contain;
         }
 
         div.nivel-violentometro {
@@ -55,7 +46,7 @@
     </style>
 </head>
 
-<body><div class="fondo">
+<body>
 
     <div class="container my-5">
 
@@ -66,14 +57,11 @@
             </div>
             <div class="col">
                 <div class="options">
-                    <button type="button" class="btn btn-info btn-help btn-sm" data-toggle="modal"
-                        data-target="#info-ayuda">¿Necesitas
+                    <button type="button" class="btn btn-info btn-help btn-sm" data-toggle="modal" data-target="#info-ayuda">¿Necesitas
                         Ayuda?</button>
-                    <a href="observatorio-master\public\attention_route.pdf" class="btn btn-sm btn-success btn-ruta"
-                        download="Ruta de Atención">Descargar ruta de atención</a>
+                    <a href="observatorio-master\public\attention_route.pdf" class="btn btn-sm btn-success btn-ruta" download="Ruta de Atención">Descargar ruta de atención</a>
                     <a class="btn btn-sm btn-llamar btn-warning my-1" href="tel:123">Llama ya a la linea: 123</a>
-                    <a class="btn btn-sm btn-success btn-chat"
-                        href="https://api.whatsapp.com/send?phone=573215831916&text=Chat%20de%20prueba%20de%20whatsapp">Habla
+                    <a class="btn btn-sm btn-success btn-chat" href="https://api.whatsapp.com/send?phone=573215831916&text=Chat%20de%20prueba%20de%20whatsapp">Habla
                         con Nosotros</a>
                 </div>
             </div>
@@ -100,15 +88,11 @@
                     <div class="col-sm-12 col-md-4 my-2 item">
                         <h5>
                             <div class="custom-control custom-switch">
-                                <input onchange="onChange(this)" data-value="{{$violencemeter->level}}" type="checkbox"
-                                    class="custom-control-input checks" id="customSwitch0{{$violencemeter->id}}">
-                                <label class="custom-control-label"
-                                    for="customSwitch0{{$violencemeter->id}}">{{$violencemeter->name}}</label>
+                                <input onchange="onChange(this)" data-value="{{$violencemeter->level}}" type="checkbox" class="custom-control-input checks" id="customSwitch0{{$violencemeter->id}}">
+                                <label class="custom-control-label" for="customSwitch0{{$violencemeter->id}}">{{$violencemeter->name}}</label>
 
-                                <input type="hidden" name="message" id="message"
-                                    value="{{ $violencemeter->attention_route }}">
-                                <input type="hidden" name="action_to_take" id="action_to_take" 
-                                    value="{{$violencemeter->action_to_take}}">
+                                <input type="hidden" name="message" id="message" value="{{ $violencemeter->attention_route }}">
+                                <input type="hidden" name="action_to_take" id="action_to_take" value="{{$violencemeter->action_to_take}}">
                             </div>
                         </h5>
                     </div>
@@ -117,8 +101,7 @@
             </div>
         </div>
     </div>
-    <div id="toast-message" role="alert" aria-live="assertive" aria-atomic="true" class="toast toast-message"
-        data-autohide="false">
+    <div id="toast-message" role="alert" aria-live="assertive" aria-atomic="true" class="toast toast-message" data-autohide="false">
         <div class="toast-header header-toast">
             <strong class="mr-auto action-to-take" id="action-to-take"></strong>
             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -165,7 +148,7 @@
             </div>
         </div>
     </div>
-</div>
+
 
     <script src="{{ asset('js/violenceLevel.js') }}"></script>
 </body>

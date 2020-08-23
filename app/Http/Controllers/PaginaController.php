@@ -10,6 +10,7 @@ class PaginaController extends Controller
     public function violentometro()
     {
         $violencemeters = Violencemeter::all();
-        return view('pagina.violentometro', compact('violencemeters'));
+        // return Violencemeter::all();
+        return view('pagina.index', compact('violencemeters'));
     }
 }
