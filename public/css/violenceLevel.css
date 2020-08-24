@@ -1,77 +1,41 @@
-/* *{
-    border: 1px solid crimson;
-} */
-div.nivel-violentometro {
-  display      : block;
-  margin-right : auto;
-  margin-left  : auto;
-  margin-top   : -40px;
-  width        : 50px;
-  height       : 600px;
-  border-radius: 25px;
-  transition   : 1s;
-}
-
-.nivel-violentometro {
-  position: relative;
-  top     : -100px;
-  left    : 30px;
-}
-
-.yellow {
-  background-color: #ffd531;
-}
-
-.orange {
-  background-color: #fc7a56;
-}
-
-.red {
-  background-color: #f1608e;
-}
-
 .level {
   /* background-color          : darkgray; */
   border-bottom             : 5px solid crimson;
   /* border-top-left-radius : 25px;
   border-top-right-radius   : 25px; */
   position                  : relative;
-  left                      : 165px;
+  left                      : 74px;
   transition                : 0.5s;
   width                     : 20px;
+}
+
+.item-violencemeter {
+  cursor: pointer;
 }
 
 .toast-message {
   width    : 400px !important;
   position : relative;
   /* border: 1px solid crimson; */
-  top      : -900px;
-  left     : 450px;
+  top      : -980px;
+  left     : 600px;
 }
 
-.header-toast {
-  background-color: #7d2181;
-  color           : white;
+.action-to-take {
+  font-size  : 25px;
+  font-weight: bolder;
+  color      : #660E80;
 }
 
 .toast-body {
-  font-size: bolder;
-  color    : black !important;
-}
-
-.alert {
-  border-radius: 25px;
-  color        : white;
-  font-size    : 20px;
-  font-weight  : bolder;
-  text-align   : center;
+  font-size: 15px;
+  color    : #2f2f2f;
 }
 
 .espiral {
   background     : url(../images/espiral.png) no-repeat center;
   background-size: contain;
   margin-top     : -100px !important;
-
 }
 
 .nivel {
@@ -85,8 +49,7 @@ div.nivel-violentometro {
   background     : url(../images/logo.png) no-repeat center;
   background-size: contain;
   height         : 10vh;
-  margin-left    : auto;
-  margin-right   : auto;
+  margin         : 0 auto;
   margin-top     : -150px;
   margin-bottom  : 20px;
 }
@@ -110,7 +73,7 @@ div.nivel-violentometro {
 .option-button {
   margin-right      : 0px;
   color             : transparent;
-  background-size   : cover;
+  background-size   : contain;
   /* width          : 100vh; */
 }
 
@@ -119,14 +82,9 @@ div.nivel-violentometro {
   color          : transparent;
 }
 
-.item-violencemeter {
-  cursor: pointer;
-
-}
-
 .buttons {
   position: relative;
-  left    : 670px;
+  left    : 650px !important;
   top     : -200px;
 }
 
@@ -135,18 +93,9 @@ div.nivel-violentometro {
   margin-bottom: -100px;
 }
 
-.toast {}
-
-.toast-img {
-  background     : url(../images/toast.png) no-repeat center;
-  background-size: contain;
-  position       : relative;
-  height         : 200px;
-  width          : 300px;
-}
-
-.toast-header {
-  background-color: transparent;
+.toast {
+  width : 300px;
+  height: 221px;
 }
 
 .items {
@@ -325,10 +274,41 @@ div.nivel-violentometro {
   top      : -410px;
   left     : 460px;
 }
-@media (min-width: 320px) {
 
+@media(max-width:375px) {
+  .buttons {
+    left: 80px!important;
+    width: 200px !important;
+    position: relative;
+    margin-top: -200px;
+  }
+
+  .nivel {
+    background        : url(../images/nivel.png) no-repeat center;
+    background-size   : contain;
+    height            : 400px;
+    position: relative;
+    margin-top     : -180px;
+    left: 400px;
+  }
+  .level{
+    position: relative;
+    margin-top     : -180px;
+    left: 166px;
+
+  }
+  .toast-message {
+    width    : 400px !important;
+    position : relative;
+    /* border: 1px solid crimson; */
+    top      : -1150px;
+    left     : 600px;
+  }
+}
+
+@media (min-width: 320px) {
   .espiral {
-    width      : 145vh;
+    width      : 145vh !important;
     margin-left: -15px;
   }
 
@@ -453,15 +433,13 @@ div.nivel-violentometro {
   }
 
 }
+
 @media (min-width: 360px) {
 
-  .espiral {
-    width      : 130vh;
-    margin-left: -15px;
-  }
 
-  .items {
-    color: red;
+  .espiral {
+    width      : 130vh !important;
+    margin-left: -15px;
   }
 
   .item1 {
@@ -585,10 +563,11 @@ div.nivel-violentometro {
   }
 
 }
+
 @media (min-width: 375px) {
 
   .espiral {
-    width      : 105vh;
+    width      : 105vh !important;
     margin-left: -15px;
   }
 
@@ -717,19 +696,30 @@ div.nivel-violentometro {
   }
 
 }
-@media(min-width: 411px){
-  .espiral{
-    width: 115vh;
-  }
-}
-@media(max-width: 411px){
-  .espiral{
-    width: 105vh;
-  }
-}
-@media(max-width: 375px){
-  .espiral{
-    width: 105vh;
+
+@media(min-width: 411px) {
+  .espiral {
+    width: 115vh !important;
   }
 }
 
+@media(min-width: 1366px) {
+  .espiral {
+
+    width: 110vh !important;
+  }
+}
+
+@media(min-height: 823px) {
+  .espiral {
+
+    width: 105vh !important;
+  }
+}
+
+@media(max-height: 667px) {
+  .espiral {
+
+    width: 127vh !important;
+  }
+}
